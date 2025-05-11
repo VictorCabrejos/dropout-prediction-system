@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Student Dropout Prediction System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-graduation-cap me-2"></i>
+                Student Dropout Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-lg mb-5">
+                    <div class="card-body p-5">
+                        <h1 class="display-5 mb-4">About the Dropout Prediction System</h1>
+
+                        <h2 class="h4 mt-4">Project Overview</h2>
+                        <p>
+                            The Student Dropout Prediction System is a web application designed to help educational
+                            institutions identify students who are at risk of dropping out before graduation. By using
+                            machine learning algorithms trained on historical student data, the system can provide early
+                            warnings that allow for timely interventions.
+                        </p>
+
+                        <h2 class="h4 mt-4">The Dataset</h2>
+                        <p>
+                            Our model was trained on a comprehensive dataset containing academic and socio-economic
+                            information from thousands of students. The dataset includes features such as:
+                        </p>
+                        <ul>
+                            <li>Academic performance indicators (units enrolled and approved)</li>
+                            <li>Demographic data (age at enrollment)</li>
+                            <li>Economic factors (unemployment rate)</li>
+                        </ul>
+
+                        <h2 class="h4 mt-4">The Machine Learning Model</h2>
+                        <p>
+                            We use a Logistic Regression model to predict student outcomes. This model was chosen for its:
+                        </p>
+                        <ul>
+                            <li>Interpretability - allowing educators to understand the factors influencing dropout risks</li>
+                            <li>Reliability - achieving high accuracy in predicting outcomes</li>
+                            <li>Efficiency - quick training and prediction times</li>
+                        </ul>
+
+                        <h2 class="h4 mt-4">Key Features</h2>
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-chart-pie text-primary me-2"></i>
+                                            Probability Analysis
+                                        </h5>
+                                        <p class="card-text">
+                                            Get detailed probability estimates for both dropout and graduation outcomes.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-tachometer-alt text-primary me-2"></i>
+                                            Real-time Predictions
+                                        </h5>
+                                        <p class="card-text">
+                                            Receive instant predictions without the need to reload the page.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-shield-alt text-primary me-2"></i>
+                                            API Access
+                                        </h5>
+                                        <p class="card-text">
+                                            Integrate our prediction system with your own student management systems.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-users text-primary me-2"></i>
+                                            User-friendly Interface
+                                        </h5>
+                                        <p class="card-text">
+                                            Easy-to-use interface designed for educators and administrators.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="h4 mt-4">Model Limitations</h2>
+                        <p>
+                            While our model provides valuable insights, it's important to note its limitations:
+                        </p>
+                        <ul>
+                            <li>The model is based on historical data and patterns that may change over time</li>
+                            <li>Predictions should be used as one of many tools in student success strategies</li>
+                            <li>Individual circumstances may vary significantly from statistical patterns</li>
+                        </ul>
+
+                        <div class="alert alert-info mt-4">
+                            <h3 class="h5">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                For Educational Use
+                            </h3>
+                            <p class="mb-0">
+                                This tool is intended to support educational interventions and student success initiatives.
+                                Predictions should be used ethically and as part of a comprehensive support strategy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Student Dropout Prediction System</h5>
+                    <p class="mb-0">Created with FastAPI & Scikit-Learn</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 Student Success Team</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

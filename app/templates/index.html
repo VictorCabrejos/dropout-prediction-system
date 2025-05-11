@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dropout Prediction System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-graduation-cap me-2"></i>
+                Student Dropout Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="display-4 mb-4">Student Dropout Prediction</h1>
+                <p class="lead">
+                    This system predicts whether a student will drop out or graduate based on academic performance
+                    and socio-economic factors.
+                </p>
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-4">Enter Student Details</h2>
+                        <form id="prediction-form">
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Age at Enrollment</label>
+                                <input type="number" class="form-control" id="age" min="16" max="80" required>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="units_enrolled_1" class="form-label">Units Enrolled (1st Semester)</label>
+                                    <input type="number" class="form-control" id="units_enrolled_1" min="0" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="units_approved_1" class="form-label">Units Approved (1st Semester)</label>
+                                    <input type="number" class="form-control" id="units_approved_1" min="0" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="units_enrolled_2" class="form-label">Units Enrolled (2nd Semester)</label>
+                                    <input type="number" class="form-control" id="units_enrolled_2" min="0" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="units_approved_2" class="form-label">Units Approved (2nd Semester)</label>
+                                    <input type="number" class="form-control" id="units_approved_2" min="0" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="unemployment" class="form-label">Unemployment Rate (%)</label>
+                                <input type="number" class="form-control" id="unemployment" min="0" max="100" step="0.1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-calculator me-2"></i>Predict Outcome
+                            </button>
+                        </form>
+                        <div class="mt-4">
+                            <button class="btn btn-link text-primary p-0 w-100 d-flex align-items-center justify-content-center"
+                                   type="button" data-bs-toggle="collapse"
+                                   data-bs-target="#helpSection" aria-expanded="false"
+                                   aria-controls="helpSection">
+                                <i class="fas fa-question-circle me-2"></i> Need help filling this form?
+                            </button>
+                            <div class="collapse mt-3" id="helpSection">
+                                <div class="card card-body bg-light border-0">
+                                    <h5 class="h6 text-primary mb-3"><i class="fas fa-info-circle me-2"></i>Input Guide</h5>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0 text-primary me-3">
+                                            <i class="fas fa-user-graduate"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Age at Enrollment</strong>
+                                            <p class="text-muted small mb-0">Student's age when they started their studies (between 16-80).<br><span class="fst-italic">Example: 20</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0 text-primary me-3">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Units Enrolled & Approved (1st Semester)</strong>
+                                            <p class="text-muted small mb-0">Number of curricular units the student enrolled in and successfully passed.<br><span class="fst-italic">Example: Enrolled 6, Approved 5</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0 text-primary me-3">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Units Enrolled & Approved (2nd Semester)</strong>
+                                            <p class="text-muted small mb-0">Number of curricular units the student enrolled in and successfully passed.<br><span class="fst-italic">Example: Enrolled 6, Approved 5</span></p>
+                                        </div>
+                                    </div>                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 text-primary me-3">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Unemployment Rate (%)</strong>
+                                            <p class="text-muted small mb-0">The percentage of unemployed people in the workforce at the time of enrollment. This economic indicator reflects the job market conditions that may affect students' financial situation.<br><span class="fst-italic">Example: 10.8</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="results-container" class="d-none mt-3 mt-md-0">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <h2 class="card-title h4 mb-4">Prediction Results</h2>
+                            <div id="result-content" class="text-center">
+                                <div id="prediction-badge" class="mb-4"></div>
+                                <div class="mb-4">
+                                    <canvas id="probability-chart"></canvas>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-6">
+                                        <h5>Dropout Probability</h5>
+                                        <p id="dropout-prob" class="h2 text-danger"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5>Graduate Probability</h5>
+                                        <p id="graduate-prob" class="h2 text-success"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title h5">How to interpret this result?</h3>
+                                <p>
+                                    The prediction model uses key academic performance indicators from the first year of studies,
+                                    combined with the student's age and economic factors to predict their likelihood of graduating
+                                    or dropping out.
+                                </p>
+                                <p>
+                                    <strong>High dropout probability</strong> might suggest the need for additional academic support,
+                                    counseling, or intervention programs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="initial-info" class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-3">How it works</h2>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="feature-icon bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Data-Driven</h5>
+                                <p class="mb-0">Trained on academic records from thousands of students</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="feature-icon bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Machine Learning</h5>
+                                <p class="mb-0">Uses logistic regression to identify patterns</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Accurate Predictions</h5>
+                                <p class="mb-0">Over 80% accuracy in identifying at-risk students</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Student Dropout Prediction System</h5>
+                    <p class="mb-0">Created with FastAPI & Scikit-Learn</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 Student Success Team</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
