@@ -1,5 +1,7 @@
 # Student Dropout Prediction System
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect%20with%20Victor-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/victorcabrejos/)
+
 A machine learning-based web application to predict whether a student is likely to drop out or graduate based on academic performance and socio-economic factors.
 
 ## Features
